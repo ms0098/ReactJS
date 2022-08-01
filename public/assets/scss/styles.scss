@@ -1,0 +1,55 @@
+@use "sass:map";
+@use "theme" as *;
+@use "functions" as *;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+    
+:focus-visible {
+    outline: none !important
+}
+
+.cursor-pointer {
+    cursor: pointer
+}
+
+.main-content {
+    width: $content_width;
+    height: get_measurement(10);
+    margin-left: $sidebar_width;
+    background-color: $secondary;
+    overflow: auto;
+    .page-content {
+        padding: get_size(5)
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+// ------------------ theme buttons ---------------
+@mixin theme-button {
+    padding: get_size(2) get_size(4);
+    border-radius: get_size(21);
+    min-width: get_size(21);
+    @include position-trbl(relative);
+    @extend .f-14;
+}
+
+// .default-button:not([disabled]) {
+//     @include theme-button;
+//     border: solid 1px $ghost;
+//     color: $ghost;
+//     &:hover {
+//         color: $primary;
+//         border-color: $primary;
+//     }
+//     &:focus:not([disabled]) {
+//         color: $primary;
+//     }
+// }
+// ----------------- *** -------------------
+

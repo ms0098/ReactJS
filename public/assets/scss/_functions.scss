@@ -1,0 +1,19 @@
+@use "sass:list";
+@use "sass:map";
+@use "theme" as *;
+
+@function get_measurement($index) {
+    @return list.nth($measure_in_per, $index);
+}
+
+@function get_breakpoint($size) {
+    @return map.get($layout-breakpoint, $size);
+}
+
+@function add_transparency($color, $per) {
+    @return #{$color} + map.get($transparency, $per);
+}
+
+@function get_size($index) {
+    @return list.nth($size, $index);
+}

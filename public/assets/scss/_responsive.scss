@@ -1,0 +1,51 @@
+@use "functions" as *;
+@use "theme" as *;
+
+// --------------------- below 576px -------------------------
+@media (max-width: get_breakpoint("small")) {
+    .mob-hidden {
+        @include box-view(none !important);
+    }
+
+    .mob-show {
+        @include box-view(block !important);
+    }
+
+    .mobile-view {
+        padding: get_size(1);
+        height: get_measurement(10);
+    }
+
+    #sidebar {
+        width: get_size(1);
+        overflow: hidden;
+    }
+}
+
+// --------------------- below 768px -------------------------
+@media (max-width: get_breakpoint("medium")) {
+
+}
+
+// --------------------- below 992px -------------------------
+@media (max-width: get_breakpoint("large")) {
+
+}
+
+// --------------------- above 1200px -------------------------
+@media (min-width: get_breakpoint("x-large")) {
+    .toggle-sidebar {
+        @include box-view(none !important)
+    }
+    
+    .sidebar {
+        &:hover {
+            width: 265px !important;
+            .hover-label {
+                @include box-view(inline-block);
+            }
+        }
+    }
+}
+
+
